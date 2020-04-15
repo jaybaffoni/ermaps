@@ -76,7 +76,7 @@ h1 {
 }
 
 .about-slide {
-  background: -webkit-linear-gradient(-45deg, #a770e5, #2e9ef4);
+  background: -webkit-linear-gradient(-45deg, #2e9ef4, #a770e5);
   min-height: 100vh;
   height: 100%;
   color: black;
@@ -86,7 +86,7 @@ h1 {
 }
 
 .team-slide {
-  background: -webkit-linear-gradient(-45deg, #a770e5, #2e9ef4);
+  background: -webkit-linear-gradient(-45deg, #2e9ef4, #a770e5);
   min-height: 100vh;
   height: 100%;
   color: black;
