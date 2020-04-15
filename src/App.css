@@ -1,16 +1,19 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Baloo Paaji 2', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size:56px;
+  font-weight: 400;
+}
+
+.big-icon {
+  font-size: 64px;
+  margin-bottom: 35px;
 }
 
 .App-header {
@@ -28,11 +31,197 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-logo {
+  max-width: 280px;
+  max-height: 280px;
+  margin-top: 75px;
+  margin-bottom: 50px;
+}
+
+.brand {
+  padding: 35px;
+}
+
+.content-box {
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-box-large {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  /* max-width: 1440px !important; */
+}
+
+.landing-slide {
+  background: -webkit-linear-gradient(-45deg, #2e9ef4, #a770e5);
+  min-height: 100vh;
+  height: 100%;
+  color: black;
+  padding-top: 10vh;
+}
+
+.partner-slide {
+  background: -webkit-linear-gradient(-45deg, #ed9017,#242575);
+  min-height: 100vh;
+  height: 100%;
+  color: black;
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.about-slide {
+  background: -webkit-linear-gradient(-45deg, #a770e5, #2e9ef4);
+  min-height: 100vh;
+  height: 100%;
+  color: black;
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.team-slide {
+  background: -webkit-linear-gradient(-45deg, #a770e5, #2e9ef4);
+  min-height: 100vh;
+  height: 100%;
+  color: black;
+  padding-top: 15vh;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.covid-slide {
+  background-image: url('./images/white-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  height: 100%;
+  color: black;
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.input-slide {
+  background-image: url('./images/white-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  height: 100%;
+  color: black;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.feature-slide {
+  background-image: url('./images/black-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  height: 100%;
+  color: black;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.login-slide {
+  background: -webkit-linear-gradient(-90deg, #000000,#555555);
+  min-height: 100vh;
+  height: 100%;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.search-slide {
+  background: -webkit-linear-gradient(-90deg, #000000,#555555);
+  min-height: 100vh;
+  height: 100%;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.footer {
+  background-color: black;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: white;
+  text-align: center;
+}
+
+.phone {
+  max-height: 750px;
+}
+
+.tablet {
+  max-height: 1000px;
+}
+
+.covid-text {
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.profile {
+  border-radius: 512px;
+  max-height: 175px;
+  margin-bottom: 35px;
+}
+
+.middle {
+  padding-top: 20vh;
+}
+
+.app-store {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.rrr {
+  max-height: 75px;
+}
+
+.tile {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
+}
+
+.full-card{
+  /* width: 360px; */
+  text-align: center;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* max-width: 320px; */
+  padding: 20px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.login-card{
+  width: 360px;
+  text-align: center;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* max-width: 320px; */
+  padding: 20px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
