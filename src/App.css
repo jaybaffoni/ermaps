@@ -133,6 +133,19 @@ h1 {
   text-align: center;
 }
 
+.addition-slide {
+  background-image: url('./images/black-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  height: 100%;
+  color: black;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
 .login-slide {
   background: -webkit-linear-gradient(-90deg, #000000,#555555);
   min-height: 100vh;
@@ -172,6 +185,11 @@ h1 {
   font-size: 20px;
 }
 
+.instruction {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
 .profile {
   border-radius: 512px;
   max-height: 175px;
@@ -182,11 +200,19 @@ h1 {
   padding-top: 20vh;
 }
 
+.middle-high {
+  padding-top: 10vh;
+}
+
+.logo {
+  margin-bottom: 15px;
+}
+
 .app-store {
   margin-left:auto;
   margin-right:auto;
   text-align: center;
-  margin-top: 35px;
+  margin-top: 20px;
 }
 
 .rrr {
@@ -224,4 +250,12 @@ h1 {
   margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline !important;
 }

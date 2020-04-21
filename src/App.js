@@ -3,16 +3,14 @@ import React, { Component } from 'react';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-import SignIn from './components/SignIn';
-import Search from './components/Search';
-import Details from './components/Details';
-import Register from './components/Register';
+import Addition from './components/AdditionSlide';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { Router, BrowserRouter, Route, Redirect } from 'react-router-dom';
 import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, NavItem, MDBNavLink, NavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
-  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, Container, Button, Link
+  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, Container, Button, Link,
+  MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter
   } from "mdbreact";
 import './App.css';
 
@@ -20,21 +18,53 @@ class App extends Component {
 
   constructor() {
     super();
+    this.setHospitalId = this.setHospitalId.bind(this);
+    this.noId = this.noId.bind(this);
     this.state = ({
-      isOpen: false
+      isOpen: false,
+      hospitalId: null,
+      modal: false,
+      error: ''
     });
 
+  }
+
+  setHospitalId(id) {
+    this.setState({hospitalId: id});
+    this.props.history.push('/details');
+  }
+
+  noId(){
+    this.setState({modal:true, error:"Please sign in again"});
   }
 
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   }
 
+  toggleModal = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
   render() {
     return (
       <div className="App">
+
         <BrowserRouter>
           <ScrollToTop>
+          <MDBContainer>
+            <MDBModal isOpen={this.state.modal} toggle={this.toggleModal}    >
+              <MDBModalHeader toggle={this.toggle}>Sign In Error</MDBModalHeader>
+              <MDBModalBody>
+                {this.state.error}
+              </MDBModalBody>
+              <MDBModalFooter>
+                <MDBBtn color="primary" onClick={this.toggleModal}>Close</MDBBtn>
+              </MDBModalFooter>
+            </MDBModal>
+          </MDBContainer>
           <MDBNavbar color="black" dark fixed="top" expand="md">
             <Container>
             <MDBNavbarBrand>
@@ -54,8 +84,8 @@ class App extends Component {
                 </MDBNavItem>
               </MDBNavbarNav>
               <MDBNavbarNav right>
-                <MDBNavItem>
-                  <Link style={{padding: "0px"}} to="/signin"><Button color="primary" size="sm">Sign In</Button></Link>
+              <MDBNavItem>
+                  <MDBNavLink to="/newsite">Notice a hospital or testing center missing?</MDBNavLink>
                 </MDBNavItem>
               </MDBNavbarNav>
             </MDBCollapse>
@@ -65,33 +95,34 @@ class App extends Component {
           <Route exact path="/home" component={Home}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/contact" component={Contact}/>
-          <Route exact path="/signin" component={SignIn}/>
-          {/* <Route exact path="/details" component={Details}/> */}
-          <Route exact path="/search" component={Search}/>
-          <Route exact path="/register" component={SignIn}/>
+          <Route exact path="/newsite" component={Addition}/>
           <Route path="*" render={() => <Redirect to="/" />}/>
           <Footer />
           </ScrollToTop>
         </BrowserRouter>
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header> */}
       </div>
       // <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline - www.freepik.com</a>
     );
   }
 
 }
+
+// const PrivateRoute = ({ component: Component, object: id, ...rest }) => (
+  
+//   <Route {...rest} render={(props) => (
+//     id
+//       ? <Component {...props} {...rest}/>
+//       : <Redirect to={{
+//           pathname: '/signin'
+//         }} />
+//   )} />
+// )
+
+const PropRoute = ({ component: Component, ...rest }) => (
+  
+  <Route {...rest} render={(props) => (
+    <Component {...props} {...rest}/>
+  )} />
+)
 
 export default App;

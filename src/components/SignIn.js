@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import { Button, Input,
          MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter} from 'mdbreact';
-import logo from '../logo.png';
-
 
 class SignIn extends Component {
     
@@ -12,6 +10,8 @@ class SignIn extends Component {
         this.login = this.login.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.switch = this.switch.bind(this);
+
+        console.log(props);
 
         this.state = {
             id: '',
@@ -43,6 +43,13 @@ class SignIn extends Component {
         //     this.setState({modal:true, error:error});
         // });
         console.log("LOGGING IN");
+        if(this.state.id){
+          console.log(this.state.id);
+          this.props.setId(this.state.id);
+        } else {
+          this.setState({modal: true, error: {message: 'No ID'}});
+        }
+        
     }
     
     render() {
